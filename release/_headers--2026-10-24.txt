@@ -1,0 +1,13 @@
+# Security headers for the XRPL Delegation Checker (version 1.0.4 · 2026-10-24).
+# Cloudflare Pages / Netlify: merge these lines into your site's _headers file.
+# Change the path line below (it starts with /tools/) if you host the page somewhere else.
+# The script hash below matches THIS build only — rebuild the headers with every new version.
+/tools/xrpl-delegation-checker/*
+  Content-Security-Policy: default-src 'none'; script-src 'sha256-V36ZWfACcYRQ7IoV/F6t5kBrgtYACOSGKn4DM12a10M='; style-src 'unsafe-inline'; img-src data:; connect-src https://xrplcluster.com https://xrpl.ws https://testnet.xrpl-labs.com https://faucet.altnet.rippletest.net wss://s1.ripple.com wss://s2.ripple.com wss://honeycluster.io; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), clipboard-read=()

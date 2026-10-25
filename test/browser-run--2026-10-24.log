@@ -1,0 +1,44 @@
+setup {
+  owner: 'rGcDduFRvMS3NXHwurCjCif1URsHmw2wuH',
+  thief: 'rHyjYwiiE27wrmrY8JUw1NiHobJYz9Fa6d',
+  helper: 'rMWLfjppZaMGpycaoCv2sf3wTkGasuDe3j',
+  late: 'rwwZjnmU6cZAevToRRsG2WGujYCvugzeXi'
+}
+PASS page script ran under its strict CSP
+PASS safest settings are ON by default, nothing stored by default
+PASS nothing written to browser storage on first visit
+PASS rejects a bad address
+PASS address fingerprint shown for pasted address
+PASS finds 2 delegates
+PASS shows the delegated payment the thief already sent
+PASS Payment delegate ranked Critical first
+PASS PaymentBurn warning shown
+PASS cross-check honestly says the tool uses one Testnet operator
+PASS revoke without a wallet asks to connect
+PASS NETWORK LOCK blocks signing when wallet is on the wrong network
+PASS refuses to revoke from a wallet that does not own the account
+PASS confirm dialog shows the exact revoke
+PASS fee obeys the user's fee limit (10 ≤ 100 drops)
+PASS strict check passed message shown
+PASS honest revoke confirmed AND verified on the ledger
+PASS re-scan: thief gone, helper remains
+PASS LEDGER VERIFY catches a wallet that signed something else
+PASS change detection fires when a new delegate appears
+PASS delegate side shows power it received
+PASS mainnet clean account reads clear
+PASS MAINNET CROSS-CHECK: two independent operators (InFTF and Ripple) agree
+PASS privacy blur turns on
+PASS settings stored only after user turns "Remember" on
+PASS remembered settings survive a reload
+PASS turning "Remember" off erases stored settings
+PASS "Forget everything now" wipes storage, wallet and settings
+PASS signed grant blob flagged Critical
+PASS batch blob hiding a delegation is caught
+PASS SetRegularKey takeover flagged
+   (0 rate-limited server replies were retried automatically)
+PASS no page errors
+PASS CLICKJACKING GUARD: refuses to run inside a frame
+PASS mobile: no horizontal scroll (results)
+PASS mobile: no horizontal scroll (security tab)
+
+ALL PASSED

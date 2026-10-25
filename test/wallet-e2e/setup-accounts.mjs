@@ -1,0 +1,12 @@
+import * as xrpl from 'xrpl';
+import { writeFileSync } from 'fs';
+const fund = async () => { for (let i=0;i<5;i++){ const r = await fetch('https://faucet.altnet.rippletest.net/accounts',{method:'POST',headers:{'content-type':'application/json'},body:'{}'}); if (r.ok) { const j = await r.json(); return { seed: j.seed, address: j.account.classicAddress || j.account.address }; } await new Promise(s=>setTimeout(s,3000)); } throw new Error('faucet'); };
+const owner = await fund(), delegate = await fund();
+console.log('owner', owner.address, 'delegate', delegate.address);
+await new Promise(s=>setTimeout(s,6000));
+const c = new xrpl.Client('wss://testnet.xrpl-labs.com'); await c.connect();
+const w = xrpl.Wallet.fromSeed(owner.seed);
+const tx = await c.autofill({ TransactionType:'DelegateSet', Account:w.address, Authorize:delegate.address, Permissions:[{Permission:{PermissionValue:'Payment'}},{Permission:{PermissionValue:'TrustSet'}}] });
+const r = await c.submitAndWait(w.sign(tx).tx_blob); console.log('grant', r.result.meta.TransactionResult);
+writeFileSync(process.env.OUT, JSON.stringify({ owner, delegate }));
+await c.disconnect();

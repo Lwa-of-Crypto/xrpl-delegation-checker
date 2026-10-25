@@ -1,0 +1,1025 @@
+{
+ "ground_truth_ledger": 107773208,
+ "sweep_calls": 9813,
+ "delegate_objects": 31,
+ "owners": [
+  {
+   "owner": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "scan_ms": 10732,
+   "tool": [
+    "rniUuaUhDPAxtnwdBQ6j3Zi1vzMADgX5wo:Payment,TicketCreate,TrustSet",
+    "radcELMu3ikQK8NVhLobzjoAMtiPfhxqwS:Payment,TicketCreate,TrustSet",
+    "rPCYZrrE9ny99eJUJHn23AV7jeLsgQ5D7b:Payment,TicketCreate,TrustSet",
+    "rQ9Nx4vNt12fcCM3Qsq3VipMG1yTmvu5yt:Payment,TicketCreate,TrustSet",
+    "rNy5imznPWm4AK3h5mFwWrNb1eCnLEVJu3:Payment,TicketCreate,TrustSet",
+    "r3Ky2142AzMMZJni4uRKg7DnvuwfLW9rMY:Payment,TicketCreate,TrustSet",
+    "r9HtaoB4TJnZFidQ1sA2VaDFwpz1btCLpG:Payment,TicketCreate,TrustSet",
+    "rHhLrP1fdfSJGQDM24EC2r62CjTgNssu6G:Payment,TicketCreate,TrustSet",
+    "rLKfVWxgBD2BwEKTDSZyxBPMCmPuGrv6Vp:Payment,TicketCreate,TrustSet",
+    "rJnXSfW8kVJcXfiASkHHZBhbun5JhiLENB:Payment,TicketCreate,TrustSet",
+    "rGnfq1KYXi2Y3DTSZBrPtF8T7kNAfShrvX:Payment,TicketCreate,TrustSet",
+    "rD65hs1NbGPWRo5wML1eufhrSu1Ku6zGnQ:Payment,TicketCreate,TrustSet",
+    "rU4z2Ak2aEdtGMRrhS6bFfKwq8XHUGV8ip:Payment,TicketCreate,TrustSet",
+    "rsY8DudEqdb8ZXh5nAxQYjr5kFXerJDJG3:Payment,TicketCreate,TrustSet",
+    "rEBm5Fc3Zaanoz2QJJVJFyuyntX5Dd6CJg:Payment,TicketCreate,TrustSet",
+    "r4XT1iUVu5FAbnFECSMmMGnVPExkQxHUgM:Payment,TicketCreate,TrustSet",
+    "rM2U5dwVhX7qTv5mDXqqWU6WbEVD88SNJK:Payment,TicketCreate,TrustSet",
+    "rMRDyRu7tyJGyhx4A9jBkSSrqt4zUKUQcE:Payment,TicketCreate,TrustSet",
+    "rso8RATr45ge785J96ob7jwHZLCnec4kCr:Payment,TicketCreate,TrustSet",
+    "rHFym2LVTjVnbEx3ZqkUvVB8gcNaw3uFix:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "r4XT1iUVu5FAbnFECSMmMGnVPExkQxHUgM:Payment,TicketCreate,TrustSet",
+    "rD65hs1NbGPWRo5wML1eufhrSu1Ku6zGnQ:Payment,TicketCreate,TrustSet",
+    "rM2U5dwVhX7qTv5mDXqqWU6WbEVD88SNJK:Payment,TicketCreate,TrustSet",
+    "rHhLrP1fdfSJGQDM24EC2r62CjTgNssu6G:Payment,TicketCreate,TrustSet",
+    "rNy5imznPWm4AK3h5mFwWrNb1eCnLEVJu3:Payment,TicketCreate,TrustSet",
+    "rniUuaUhDPAxtnwdBQ6j3Zi1vzMADgX5wo:Payment,TicketCreate,TrustSet",
+    "rPCYZrrE9ny99eJUJHn23AV7jeLsgQ5D7b:Payment,TicketCreate,TrustSet",
+    "rGnfq1KYXi2Y3DTSZBrPtF8T7kNAfShrvX:Payment,TicketCreate,TrustSet",
+    "rMRDyRu7tyJGyhx4A9jBkSSrqt4zUKUQcE:Payment,TicketCreate,TrustSet",
+    "rsY8DudEqdb8ZXh5nAxQYjr5kFXerJDJG3:Payment,TicketCreate,TrustSet",
+    "radcELMu3ikQK8NVhLobzjoAMtiPfhxqwS:Payment,TicketCreate,TrustSet",
+    "rU4z2Ak2aEdtGMRrhS6bFfKwq8XHUGV8ip:Payment,TicketCreate,TrustSet",
+    "rEBm5Fc3Zaanoz2QJJVJFyuyntX5Dd6CJg:Payment,TicketCreate,TrustSet",
+    "rHFym2LVTjVnbEx3ZqkUvVB8gcNaw3uFix:Payment,TicketCreate,TrustSet",
+    "r3Ky2142AzMMZJni4uRKg7DnvuwfLW9rMY:Payment,TicketCreate,TrustSet",
+    "rQ9Nx4vNt12fcCM3Qsq3VipMG1yTmvu5yt:Payment,TicketCreate,TrustSet",
+    "rLKfVWxgBD2BwEKTDSZyxBPMCmPuGrv6Vp:Payment,TicketCreate,TrustSet",
+    "rJnXSfW8kVJcXfiASkHHZBhbun5JhiLENB:Payment,TicketCreate,TrustSet",
+    "rso8RATr45ge785J96ob7jwHZLCnec4kCr:Payment,TicketCreate,TrustSet",
+    "r9HtaoB4TJnZFidQ1sA2VaDFwpz1btCLpG:Payment,TicketCreate,TrustSet"
+   ],
+   "tool_ledger": 107774241,
+   "tool_activity_found": 51,
+   "tool_activity_scanned": 1765,
+   "replay": [
+    "rD65hs1NbGPWRo5wML1eufhrSu1Ku6zGnQ:Payment,TicketCreate,TrustSet",
+    "rPCYZrrE9ny99eJUJHn23AV7jeLsgQ5D7b:Payment,TicketCreate,TrustSet",
+    "rNy5imznPWm4AK3h5mFwWrNb1eCnLEVJu3:Payment,TicketCreate,TrustSet",
+    "radcELMu3ikQK8NVhLobzjoAMtiPfhxqwS:Payment,TicketCreate,TrustSet",
+    "r3Ky2142AzMMZJni4uRKg7DnvuwfLW9rMY:Payment,TicketCreate,TrustSet",
+    "rU4z2Ak2aEdtGMRrhS6bFfKwq8XHUGV8ip:Payment,TicketCreate,TrustSet",
+    "rso8RATr45ge785J96ob7jwHZLCnec4kCr:Payment,TicketCreate,TrustSet",
+    "rHFym2LVTjVnbEx3ZqkUvVB8gcNaw3uFix:Payment,TicketCreate,TrustSet",
+    "rGnfq1KYXi2Y3DTSZBrPtF8T7kNAfShrvX:Payment,TicketCreate,TrustSet",
+    "rEBm5Fc3Zaanoz2QJJVJFyuyntX5Dd6CJg:Payment,TicketCreate,TrustSet",
+    "rHhLrP1fdfSJGQDM24EC2r62CjTgNssu6G:Payment,TicketCreate,TrustSet",
+    "r4XT1iUVu5FAbnFECSMmMGnVPExkQxHUgM:Payment,TicketCreate,TrustSet",
+    "rMRDyRu7tyJGyhx4A9jBkSSrqt4zUKUQcE:Payment,TicketCreate,TrustSet",
+    "r9HtaoB4TJnZFidQ1sA2VaDFwpz1btCLpG:Payment,TicketCreate,TrustSet",
+    "rQ9Nx4vNt12fcCM3Qsq3VipMG1yTmvu5yt:Payment,TicketCreate,TrustSet",
+    "rJnXSfW8kVJcXfiASkHHZBhbun5JhiLENB:Payment,TicketCreate,TrustSet",
+    "rM2U5dwVhX7qTv5mDXqqWU6WbEVD88SNJK:Payment,TicketCreate,TrustSet",
+    "rniUuaUhDPAxtnwdBQ6j3Zi1vzMADgX5wo:Payment,TicketCreate,TrustSet",
+    "rLKfVWxgBD2BwEKTDSZyxBPMCmPuGrv6Vp:Payment,TicketCreate,TrustSet",
+    "rsY8DudEqdb8ZXh5nAxQYjr5kFXerJDJG3:Payment,TicketCreate,TrustSet"
+   ],
+   "history_tx": 1766,
+   "delegated_tx_total": 51,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rKYe9qGQvPGqTs4ywH7AogEEXtBNwsCPTT",
+   "scan_ms": 3887,
+   "tool": [
+    "rp13uhTVCkB8SBbCBxngVD8VzH8xmY1YJ1:OfferCancel,OfferCreate"
+   ],
+   "truth": [
+    "rp13uhTVCkB8SBbCBxngVD8VzH8xmY1YJ1:OfferCancel,OfferCreate"
+   ],
+   "tool_ledger": 107774246,
+   "tool_activity_found": 397,
+   "tool_activity_scanned": 438,
+   "replay": [
+    "rp13uhTVCkB8SBbCBxngVD8VzH8xmY1YJ1:OfferCancel,OfferCreate"
+   ],
+   "history_tx": 452,
+   "delegated_tx_total": 397,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rLc9Z3krJ1Y5boBbqpMoSXKEBviaioDwH9",
+   "scan_ms": 2211,
+   "tool": [
+    "rpTUXVoZ9EmV65WdrTPyVYvu12rgMLrGb3:Payment"
+   ],
+   "truth": [
+    "rpTUXVoZ9EmV65WdrTPyVYvu12rgMLrGb3:Payment"
+   ],
+   "tool_ledger": 107774248,
+   "tool_activity_found": 0,
+   "tool_activity_scanned": 9,
+   "replay": [
+    "rpTUXVoZ9EmV65WdrTPyVYvu12rgMLrGb3:Payment"
+   ],
+   "history_tx": 9,
+   "delegated_tx_total": 0,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rHJc1zZFmBzaCPUCYWcvZWPDp9vFrz5AbM",
+   "scan_ms": 14931,
+   "tool": [
+    "rKGTjkT7oKisk4j46pxaRZCthyXmpV1sk7:Payment",
+    "rsbRoFnntXFCoAfETdyVHZu8FLgmwRiAo1:Payment"
+   ],
+   "truth": [
+    "rKGTjkT7oKisk4j46pxaRZCthyXmpV1sk7:Payment",
+    "rsbRoFnntXFCoAfETdyVHZu8FLgmwRiAo1:Payment"
+   ],
+   "tool_ledger": 107774250,
+   "tool_activity_found": 7,
+   "tool_activity_scanned": 3760,
+   "replay": [
+    "rKGTjkT7oKisk4j46pxaRZCthyXmpV1sk7:Payment",
+    "rsbRoFnntXFCoAfETdyVHZu8FLgmwRiAo1:Payment"
+   ],
+   "history_tx": 10828,
+   "delegated_tx_total": 7,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rEdGFQHY5VhadmVSHhxqWHNFVvfUw9XpMU",
+   "scan_ms": 2508,
+   "tool": [
+    "rKWd79X7DmeWabe9tzoX33Dm2mUn9KFppa:Payment,TicketCreate",
+    "ra5fKHSL4vA75xvXYso8WSQoVgxvgXKGcb:Payment"
+   ],
+   "truth": [
+    "rKWd79X7DmeWabe9tzoX33Dm2mUn9KFppa:Payment,TicketCreate",
+    "ra5fKHSL4vA75xvXYso8WSQoVgxvgXKGcb:Payment"
+   ],
+   "tool_ledger": 107774264,
+   "tool_activity_found": 0,
+   "tool_activity_scanned": 10,
+   "replay": [
+    "rKWd79X7DmeWabe9tzoX33Dm2mUn9KFppa:Payment,TicketCreate",
+    "ra5fKHSL4vA75xvXYso8WSQoVgxvgXKGcb:Payment"
+   ],
+   "history_tx": 10,
+   "delegated_tx_total": 0,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rENxidjr5VMNvrKMNQAKBitLd9FYy23sSk",
+   "scan_ms": 2565,
+   "tool": [
+    "r99N769HS22qXf1t8xSoKwb4YkcNSS52TT:Payment"
+   ],
+   "truth": [
+    "r99N769HS22qXf1t8xSoKwb4YkcNSS52TT:Payment"
+   ],
+   "tool_ledger": 107774264,
+   "tool_activity_found": 205,
+   "tool_activity_scanned": 214,
+   "replay": [
+    "r99N769HS22qXf1t8xSoKwb4YkcNSS52TT:Payment"
+   ],
+   "history_tx": 214,
+   "delegated_tx_total": 205,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rNbo7tLDXbK5EoQmgcgEFpYZXB1watuAog",
+   "scan_ms": 4256,
+   "tool": [
+    "rwMKPadPqT44LqfjTWqm4mrNgxDrSMcF3Z:Payment"
+   ],
+   "truth": [
+    "rwMKPadPqT44LqfjTWqm4mrNgxDrSMcF3Z:Payment"
+   ],
+   "tool_ledger": 107774266,
+   "tool_activity_found": 9,
+   "tool_activity_scanned": 516,
+   "replay": [
+    "rwMKPadPqT44LqfjTWqm4mrNgxDrSMcF3Z:Payment"
+   ],
+   "history_tx": 3451,
+   "delegated_tx_total": 9,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rFMPCQoydfE7VFN4fi9P9zgtvupkGS3dW",
+   "scan_ms": 2090,
+   "tool": [
+    "rfsafTj5Zxpoj6fySa1vEjS4Q5FhrRmWEu:NFTokenMint"
+   ],
+   "truth": [
+    "rfsafTj5Zxpoj6fySa1vEjS4Q5FhrRmWEu:NFTokenMint"
+   ],
+   "tool_ledger": 107774272,
+   "tool_activity_found": 0,
+   "tool_activity_scanned": 24,
+   "replay": [
+    "rfsafTj5Zxpoj6fySa1vEjS4Q5FhrRmWEu:NFTokenMint"
+   ],
+   "history_tx": 253,
+   "delegated_tx_total": 0,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rLUNT2pkkLFJfUirUsMZR2NFSgP7ZFZtNr",
+   "scan_ms": 2104,
+   "tool": [
+    "r4HkmiDb4dcQR1FEy55YxKcbVpQy52aqps:Payment"
+   ],
+   "truth": [
+    "r4HkmiDb4dcQR1FEy55YxKcbVpQy52aqps:Payment"
+   ],
+   "tool_ledger": 107774273,
+   "tool_activity_found": 0,
+   "tool_activity_scanned": 9,
+   "replay": [
+    "r4HkmiDb4dcQR1FEy55YxKcbVpQy52aqps:Payment"
+   ],
+   "history_tx": 9,
+   "delegated_tx_total": 0,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": true,
+   "activity_ok": true
+  },
+  {
+   "owner": "rnt8PbBFT7idcLyj9PNgxjZi9Z1RiRX3QL",
+   "scan_ms": 12782,
+   "tool": [
+    "rw2X2GFePFiLDdcQw6iELFfUEw1hPqAGcK:OfferCancel,OfferCreate"
+   ],
+   "truth": [
+    "rw2X2GFePFiLDdcQw6iELFfUEw1hPqAGcK:OfferCancel,OfferCreate"
+   ],
+   "tool_ledger": 107774274,
+   "tool_activity_found": 3981,
+   "tool_activity_scanned": 4000,
+   "replay": [
+    "rw2X2GFePFiLDdcQw6iELFfUEw1hPqAGcK:OfferCancel,OfferCreate"
+   ],
+   "history_tx": 33894,
+   "delegated_tx_total": 33392,
+   "tool_vs_truth": true,
+   "tool_vs_replay": true,
+   "truth_vs_replay": true,
+   "tool_activity_complete": false,
+   "activity_ok": true
+  }
+ ],
+ "delegates": [
+  {
+   "delegate": "r4XT1iUVu5FAbnFECSMmMGnVPExkQxHUgM",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rp13uhTVCkB8SBbCBxngVD8VzH8xmY1YJ1",
+   "pass": true,
+   "tool": [
+    "rKYe9qGQvPGqTs4ywH7AogEEXtBNwsCPTT:OfferCancel,OfferCreate"
+   ],
+   "truth": [
+    "rKYe9qGQvPGqTs4ywH7AogEEXtBNwsCPTT:OfferCancel,OfferCreate"
+   ]
+  },
+  {
+   "delegate": "rD65hs1NbGPWRo5wML1eufhrSu1Ku6zGnQ",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rM2U5dwVhX7qTv5mDXqqWU6WbEVD88SNJK",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rHhLrP1fdfSJGQDM24EC2r62CjTgNssu6G",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rNy5imznPWm4AK3h5mFwWrNb1eCnLEVJu3",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rpTUXVoZ9EmV65WdrTPyVYvu12rgMLrGb3",
+   "pass": true,
+   "tool": [
+    "rLc9Z3krJ1Y5boBbqpMoSXKEBviaioDwH9:Payment"
+   ],
+   "truth": [
+    "rLc9Z3krJ1Y5boBbqpMoSXKEBviaioDwH9:Payment"
+   ]
+  },
+  {
+   "delegate": "rniUuaUhDPAxtnwdBQ6j3Zi1vzMADgX5wo",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rPCYZrrE9ny99eJUJHn23AV7jeLsgQ5D7b",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rKGTjkT7oKisk4j46pxaRZCthyXmpV1sk7",
+   "pass": true,
+   "tool": [
+    "rHJc1zZFmBzaCPUCYWcvZWPDp9vFrz5AbM:Payment"
+   ],
+   "truth": [
+    "rHJc1zZFmBzaCPUCYWcvZWPDp9vFrz5AbM:Payment"
+   ]
+  },
+  {
+   "delegate": "rKWd79X7DmeWabe9tzoX33Dm2mUn9KFppa",
+   "pass": true,
+   "tool": [
+    "rEdGFQHY5VhadmVSHhxqWHNFVvfUw9XpMU:Payment,TicketCreate"
+   ],
+   "truth": [
+    "rEdGFQHY5VhadmVSHhxqWHNFVvfUw9XpMU:Payment,TicketCreate"
+   ]
+  },
+  {
+   "delegate": "rGnfq1KYXi2Y3DTSZBrPtF8T7kNAfShrvX",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rMRDyRu7tyJGyhx4A9jBkSSrqt4zUKUQcE",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rsY8DudEqdb8ZXh5nAxQYjr5kFXerJDJG3",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "radcELMu3ikQK8NVhLobzjoAMtiPfhxqwS",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "r99N769HS22qXf1t8xSoKwb4YkcNSS52TT",
+   "pass": true,
+   "tool": [
+    "rENxidjr5VMNvrKMNQAKBitLd9FYy23sSk:Payment"
+   ],
+   "truth": [
+    "rENxidjr5VMNvrKMNQAKBitLd9FYy23sSk:Payment"
+   ]
+  },
+  {
+   "delegate": "rwMKPadPqT44LqfjTWqm4mrNgxDrSMcF3Z",
+   "pass": true,
+   "tool": [
+    "rNbo7tLDXbK5EoQmgcgEFpYZXB1watuAog:Payment"
+   ],
+   "truth": [
+    "rNbo7tLDXbK5EoQmgcgEFpYZXB1watuAog:Payment"
+   ]
+  },
+  {
+   "delegate": "rsbRoFnntXFCoAfETdyVHZu8FLgmwRiAo1",
+   "pass": true,
+   "tool": [
+    "rHJc1zZFmBzaCPUCYWcvZWPDp9vFrz5AbM:Payment"
+   ],
+   "truth": [
+    "rHJc1zZFmBzaCPUCYWcvZWPDp9vFrz5AbM:Payment"
+   ]
+  },
+  {
+   "delegate": "rU4z2Ak2aEdtGMRrhS6bFfKwq8XHUGV8ip",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rEBm5Fc3Zaanoz2QJJVJFyuyntX5Dd6CJg",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rfsafTj5Zxpoj6fySa1vEjS4Q5FhrRmWEu",
+   "pass": true,
+   "tool": [
+    "rFMPCQoydfE7VFN4fi9P9zgtvupkGS3dW:NFTokenMint"
+   ],
+   "truth": [
+    "rFMPCQoydfE7VFN4fi9P9zgtvupkGS3dW:NFTokenMint"
+   ]
+  },
+  {
+   "delegate": "r4HkmiDb4dcQR1FEy55YxKcbVpQy52aqps",
+   "pass": true,
+   "tool": [
+    "rLUNT2pkkLFJfUirUsMZR2NFSgP7ZFZtNr:Payment"
+   ],
+   "truth": [
+    "rLUNT2pkkLFJfUirUsMZR2NFSgP7ZFZtNr:Payment"
+   ]
+  },
+  {
+   "delegate": "rHFym2LVTjVnbEx3ZqkUvVB8gcNaw3uFix",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rw2X2GFePFiLDdcQw6iELFfUEw1hPqAGcK",
+   "pass": true,
+   "tool": [
+    "rnt8PbBFT7idcLyj9PNgxjZi9Z1RiRX3QL:OfferCancel,OfferCreate"
+   ],
+   "truth": [
+    "rnt8PbBFT7idcLyj9PNgxjZi9Z1RiRX3QL:OfferCancel,OfferCreate"
+   ]
+  },
+  {
+   "delegate": "r3Ky2142AzMMZJni4uRKg7DnvuwfLW9rMY",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rQ9Nx4vNt12fcCM3Qsq3VipMG1yTmvu5yt",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rLKfVWxgBD2BwEKTDSZyxBPMCmPuGrv6Vp",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "rJnXSfW8kVJcXfiASkHHZBhbun5JhiLENB",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "ra5fKHSL4vA75xvXYso8WSQoVgxvgXKGcb",
+   "pass": true,
+   "tool": [
+    "rEdGFQHY5VhadmVSHhxqWHNFVvfUw9XpMU:Payment"
+   ],
+   "truth": [
+    "rEdGFQHY5VhadmVSHhxqWHNFVvfUw9XpMU:Payment"
+   ]
+  },
+  {
+   "delegate": "rso8RATr45ge785J96ob7jwHZLCnec4kCr",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  },
+  {
+   "delegate": "r9HtaoB4TJnZFidQ1sA2VaDFwpz1btCLpG",
+   "pass": true,
+   "tool": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ],
+   "truth": [
+    "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b:Payment,TicketCreate,TrustSet"
+   ]
+  }
+ ],
+ "decoder": [
+  {
+   "hash": "6D379682CC29CC03F33927973CE01DA0580ABD57CC98352AD108BC7075A2B9D4",
+   "authorize": "rD65hs1NbGPWRo5wML1eufhrSu1Ku6zGnQ",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "6B5D5D3FAAB85D35461E56251C7A6F190C1535D13438F45E82A229FF7AE48049",
+   "authorize": "rPCYZrrE9ny99eJUJHn23AV7jeLsgQ5D7b",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "4BFEBA1973FC5F605C41510D5064078D2A4548FADAEBB84DA5D35F4AFCE3F1A7",
+   "authorize": "rNy5imznPWm4AK3h5mFwWrNb1eCnLEVJu3",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "CE7A6246A26186152F713A93E64703581691F57BC0FC6A8BD920AC71A0C9577C",
+   "authorize": "radcELMu3ikQK8NVhLobzjoAMtiPfhxqwS",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "69B7B88FCECB0B2FD42634176839F3E0C1FF60D7837D2D08A0AAB062BA14F769",
+   "authorize": "r3Ky2142AzMMZJni4uRKg7DnvuwfLW9rMY",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "3A259585704A5AA833D91D4A0F564F6F00E712B3D32F86AF2D27656EE95F1454",
+   "authorize": "rU4z2Ak2aEdtGMRrhS6bFfKwq8XHUGV8ip",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "BB0F600BE2ADF45D354BA3F775248535F6167B2A14BCD582074D864FDCFAF894",
+   "authorize": "rso8RATr45ge785J96ob7jwHZLCnec4kCr",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "EA6DF618A0CC32CD0ED531EFB2D758F6F6FCE081AB14445EB2964B49BB9B21FA",
+   "authorize": "rHFym2LVTjVnbEx3ZqkUvVB8gcNaw3uFix",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "6610E479A8F43C4CFD5DEE93B8CB85AF305E5551FE3C875125887172881A380C",
+   "authorize": "rGnfq1KYXi2Y3DTSZBrPtF8T7kNAfShrvX",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "17CBB5E7C5A045796540FD41EBEF2A4D3A4C92D9333EA95112C91E723A9CD8C4",
+   "authorize": "rEBm5Fc3Zaanoz2QJJVJFyuyntX5Dd6CJg",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "C043FDE5307DEDD968F9EC17169922E4B738980282711FA4B34A9C4878A6A5C1",
+   "authorize": "rHhLrP1fdfSJGQDM24EC2r62CjTgNssu6G",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "F97DBA0C935E0BAE572D22BB53982C3D32417314243510A69545313316DD0FB0",
+   "authorize": "r4XT1iUVu5FAbnFECSMmMGnVPExkQxHUgM",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "5E67131CB50E87A363F931994897E67D99BAFF139BEEF42BC240E9F92EB2311B",
+   "authorize": "rMRDyRu7tyJGyhx4A9jBkSSrqt4zUKUQcE",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "235AD5AAEC3B77C7C9B79AD0FDCDFDB844667B470858D969B42A40F290EAB1C3",
+   "authorize": "r9HtaoB4TJnZFidQ1sA2VaDFwpz1btCLpG",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "ED12EA3A648763B5FAA244DF7E1EE21868A419A917AE78A6F0091CC07A5718FF",
+   "authorize": "rQ9Nx4vNt12fcCM3Qsq3VipMG1yTmvu5yt",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "633F36E48D1E045D25F793E1A92098C3A5C5ABEC79DDC331A907A0A6DBB0418E",
+   "authorize": "rJnXSfW8kVJcXfiASkHHZBhbun5JhiLENB",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "37668D8A4422A5A480ADC1B8A09F3FA78621C97BB2DA098971033E7B8A027075",
+   "authorize": "rM2U5dwVhX7qTv5mDXqqWU6WbEVD88SNJK",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "CF1D8AC65BE3EDD0E41A96336F37AF5806F43A537B39F9FA2EFFA4E5BC564399",
+   "authorize": "rniUuaUhDPAxtnwdBQ6j3Zi1vzMADgX5wo",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "1208CA678B15E91CFFF054E5FF2E31C03BB6F636DEB954CC097C6D48E1F2B2DD",
+   "authorize": "rLKfVWxgBD2BwEKTDSZyxBPMCmPuGrv6Vp",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "65E8647A63812D0437E091767EA0874112283F2C5F39661F3B789B21DC5C39D7",
+   "authorize": "rsY8DudEqdb8ZXh5nAxQYjr5kFXerJDJG3",
+   "perms": [
+    "Payment",
+    "TicketCreate",
+    "TrustSet"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "584A73C349D3905F5878706B95A58A25454C7E364EE313CB2468F2494C71C2C0",
+   "authorize": "rp13uhTVCkB8SBbCBxngVD8VzH8xmY1YJ1",
+   "perms": [
+    "OfferCreate",
+    "OfferCancel"
+   ],
+   "decoded_ok": true,
+   "verdict": "high",
+   "verdict_ok": true
+  },
+  {
+   "hash": "0721926BE4C30A745B5D7AFEF535C970C1AECD89A1C9BAFB6BF233E9ECC89F31",
+   "authorize": "rpTUXVoZ9EmV65WdrTPyVYvu12rgMLrGb3",
+   "perms": [
+    "Payment"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "126016D83555F150D73549BB3C9D88A8DD88160B6F7047C05C8945DFBB4A3A60",
+   "authorize": "rKGTjkT7oKisk4j46pxaRZCthyXmpV1sk7",
+   "perms": [
+    "Payment"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "F10A66FDE946FADE035CB5B37734E6B4F9BF9DCCCA664A568107B19A8056F302",
+   "authorize": "rsbRoFnntXFCoAfETdyVHZu8FLgmwRiAo1",
+   "perms": [
+    "Payment"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "065F4F4028D9150CCB34D8DE047949D2C6510D9018D8B78295A4BA35BD306212",
+   "authorize": "rKWd79X7DmeWabe9tzoX33Dm2mUn9KFppa",
+   "perms": [
+    "Payment",
+    "TicketCreate"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "3B7DC460D1710E7FA4388EBFBE85227A6D6747D50EA9303BD58FDC1D9C0F7364",
+   "authorize": "ra5fKHSL4vA75xvXYso8WSQoVgxvgXKGcb",
+   "perms": [
+    "Payment"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "5611CE92D89CD8E774865653315DCE3F6ECD6439FC76A0132BBC46A64CE9F97B",
+   "authorize": "r99N769HS22qXf1t8xSoKwb4YkcNSS52TT",
+   "perms": [
+    "Payment"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "F25735716BFE03522713DC3AAFF86F7A27E9D0FBA774A64A45C139B0394D65B0",
+   "authorize": "rwMKPadPqT44LqfjTWqm4mrNgxDrSMcF3Z",
+   "perms": [
+    "PaymentMint"
+   ],
+   "decoded_ok": true,
+   "verdict": "high",
+   "verdict_ok": true
+  },
+  {
+   "hash": "F55CBCF24305EDDD561112D5FE853528CE6AA28AAB852642FF11DDB58F366DF7",
+   "authorize": "rwMKPadPqT44LqfjTWqm4mrNgxDrSMcF3Z",
+   "perms": [
+    "Payment"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "4D7B377C4CDC0F3C1D8AD4DF844BC3AFCA968D3E4EF44C30AD4AE0AAB637B7C4",
+   "authorize": "rfsafTj5Zxpoj6fySa1vEjS4Q5FhrRmWEu",
+   "perms": [
+    "NFTokenMint"
+   ],
+   "decoded_ok": true,
+   "verdict": "high",
+   "verdict_ok": true
+  },
+  {
+   "hash": "663388010038890222AB5D7931024651AFF527333A42FE6A78EC24455CE080F0",
+   "authorize": "r4HkmiDb4dcQR1FEy55YxKcbVpQy52aqps",
+   "perms": [
+    "Payment"
+   ],
+   "decoded_ok": true,
+   "verdict": "critical",
+   "verdict_ok": true
+  },
+  {
+   "hash": "4250B72A5AB63CEB5501CFDDA3B4C9765B85941BB6AECE9720FC6C0D5F524B66",
+   "authorize": "rw2X2GFePFiLDdcQw6iELFfUEw1hPqAGcK",
+   "perms": [
+    "OfferCreate",
+    "OfferCancel"
+   ],
+   "decoded_ok": true,
+   "verdict": "high",
+   "verdict_ok": true
+  },
+  {
+   "hash": "EE825DEED44746351F75B1D9D75C5250F56AE60C245B604E68E03759D58373B1",
+   "authorize": "rw2X2GFePFiLDdcQw6iELFfUEw1hPqAGcK",
+   "perms": [
+    "OfferCreate",
+    "OfferCancel"
+   ],
+   "decoded_ok": true,
+   "verdict": "high",
+   "verdict_ok": true
+  }
+ ],
+ "summary": {
+  "owners_checked": 10,
+  "owners_exact_match": 10,
+  "owners_changed_after_snapshot": 0,
+  "owners_mismatch": 0,
+  "delegates_checked": 31,
+  "delegates_exact_match": 31,
+  "delegates_mismatch": 0,
+  "real_blobs_decoded": 33,
+  "decoder_correct": 33,
+  "decoder_wrong": 0,
+  "permission_names_seen": [
+   "NFTokenMint",
+   "OfferCancel",
+   "OfferCreate",
+   "Payment",
+   "TicketCreate",
+   "TrustSet"
+  ],
+  "delegated_tx_samples": [
+   "E5B97465937058B88CE32C444B44D66DD3E356C88925E77714797E9B62D0286A",
+   "FD9BFF852037F7FBC6D23E54A630C9C5E9E04CC6F86BDE169DA7C432510B152E",
+   "8BDCA3B5DF699AEA0867BAA795C0228844A0BF4BD9B4B1036CF5A8799E65B23A",
+   "ABABF59718C302181D5AD20318A7B48552B6B7000E2006E927A7C23117C9456D",
+   "24F30026C8835D10133F81F4176D3AFE6DB454BFB1A60B7CB96874D8F6B48A74",
+   "50DF2A63016F29AA0311F2F17AC061DECA075596E1A46069578074D45D0750CF",
+   "8B198BAA6DA17A6D6E237D31A5867057D13ED79D78740F4ED15D933499677190",
+   "E8D2EC028907C717E48608A453509C002D379359EC872D81E7E7F85681BE146B",
+   "9028DA86D6FD9B28C4E8A83B9EBC0082F06C50756EB0ED7F21E89F9BA60C604A",
+   "0049BB2C0282AE9F169F587FAF5E305C19C31CEBBC47BDFBC7328287AC99C8CA",
+   "9E2FC569F89FCBCFB0A911B9C43AC69311110C77FCD88882E86E7C4DC5BBA5B3",
+   "2CF787EF3EBD83A561BACA0D4362053B911692374A10612E4C42D9D12BD6ED24",
+   "ACC6ED495E78BEE1A6C64A91E06DEB95E0227D5E63A9564FA21673FD73F108D0",
+   "032A702CD7391061AFAB419BE10E24D7A958CFF4CDB0E4715D3ED34C08850608",
+   "61EE69C57F1A37DA70A440CE4753069E3DF3A9A5039AA8D7BED02D5539210B10"
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+Release file: e1489eb2251bb9f9da5eae259aac4c088b125ab8483d57bd98f4f2fbdad784bd  dist/xrpl-delegation-checker--2026-10-24.html
+=== unit
+PASS clean revoke passes strict check
+PASS grant disguised as revoke is blocked
+PASS swapped delegate is blocked
+PASS swapped account is blocked
+PASS fee above limit is blocked
+PASS extra fields are blocked
+PASS wrong type is blocked
+PASS Payment = Critical
+PASS OfferCreate = High
+PASS AccountDomainSet = Low
+PASS PaymentBurn = High
+PASS AccountDelete flagged Critical with destination
+PASS revoke reads Low
+PASS junk input rejected
+PASS hex currency decoded
+PASS bad checksum address rejected
+PASS cross-check fingerprint detects a changed permission
+PASS rate-limit JSON reply is retried, then the real answer is used
+PASS persistent rate limit fails over across both servers (11 tries on 2 servers) and reports clearly
+PASS a server reporting it is almost out of quota is rested and the other server takes over (1 of 5 calls went to the tired server)
+PASS a real ledger answer (account not found) is still returned immediately
+ALL PASSED
+=== attack-core
+PASS hostile Delegate objects do not crash the scan
+PASS objects with a fake address are dropped, never shown
+PASS permission names are plain short strings (["UnknownPermission"])
+PASS a string "Permissions" field is not split into letters
+PASS delegate "domain" is stripped of right-to-left/invisible tricks ("moc.elppirevil.io")
+PASS stuck account_objects marker stops (truncated, 1 ms)
+PASS a server feeding 1 transaction per page cannot keep the scan busy forever (40 pages, 1 ms)
+PASS a server ignoring "limit" cannot flood the page (kept 400)
+PASS transaction hashes that are not real hashes are dropped (no fake links)
+PASS activity rows with a fake delegate address are dropped
+PASS garbage Sequence / ledger index from a server is refused (The ledger server returned an invalid account sequence number. Nothing was sent. Please try again.)
+PASS ledger verification runs against what the server says
+PASS after signing, the revoke can be confirmed on a SECOND independent server (one lying server cannot fake success)
+PASS a batch nested 5,000 deep is handled, not a crash (critical)
+PASS a multi-megabyte paste is refused up front (5.4 MB, 3 ms)
+PASS odd-shaped transactions never crash the explainer (0 crashed)
+PASS AccountSet that DISABLES THE MASTER KEY is Critical (got critical)
+PASS selling an NFT for 0 to a set destination (giving it away) is Critical (got critical)
+PASS EscrowCreate shows the amount and destination and is not "medium"
+PASS PaymentChannelCreate is High (got high)
+PASS a memo carrying a web link is shown and warned about
+PASS a partial-payment flag is pointed out
+PASS AccountSet enabling clawback is not called low-risk
+PASS 3,000 random blobs: anything that decodes is explained without crashing (0 crashes)
+PASS 4,000 single-character corruptions of real blobs: 3323 decoded, 0 crashed the explainer
+PASS a pre-signed ticketed transaction with no expiry is flagged (can be submitted months later)
+PASS a 25,000 XRP "fee" is Critical (got critical)
+PASS a DelegateSet listing 11 permissions (hiding Payment as #11) is Critical
+PASS a normal revoke with an expiry still reads Low (no false alarm)
+PASS the bare revoke users copy into Xaman reads Low (no false alarm)
+PASS an already-signed transaction with no expiry is flagged
+PASS an abandoned history check stops right away (3 pages, then stopped)
+PASS an address with a hidden zero-width character is rejected
+PASS and the user is told it contained hidden characters
+PASS an X-address is converted to its classic r-address
+
+ALL 35 PASSED
+=== lab-live
+PASS signWith matches xrpl.js blob and hash
+PASS lab refuses Mainnet
+   Asking the Testnet faucet for two practice accounts…
+   Waiting for Testnet to create them…
+PASS two practice accounts created (6 s)
+PASS grant validated: tesSUCCESS
+PASS scan sees the delegate
+PASS helper moved 1 XRP out of owner: tesSUCCESS
+PASS revoke passes strict check
+PASS practice wallet refuses to sign for another account
+PASS practice wallet refuses when page is on Mainnet
+PASS revoke validated: tesSUCCESS
+   verifyOnLedger: []
+PASS helper refused after revoke: terNO_DELEGATE_PERMISSION
+PASS wipe forgets the practice keys
+ALL PASSED
+=== attack-browser
+PASS hostile server cannot inject code or elements (pwned=undefined, injected elements=0)
+PASS an "unavailable" amount is not shown as NaN
+PASS no page crash on hostile data
+PASS a lying operator is exposed: "Two independent operators disagree" names InFTF and Ripple
+PASS the page never shows an all-clear without the disagreement warning next to it
+PASS when Ripple is down, Honeycluster steps in as the independent second opinion
+PASS xrplcluster.com + xrpl.ws (same cluster) are NEVER presented as two independent sources
+PASS all servers refusing → clear error, not a hang (40 s)
+PASS Scan button is usable again after the failure
+PASS no page crash when every server is down
+PASS a tampered fee limit (99,999,999 drops) is refused (now 1000)
+PASS a tampered Watch interval that would hammer the servers is refused (now 10 min)
+PASS a tampered auto-disconnect time is refused (now 5 min)
+PASS safety switches cannot be turned off by a wrong-typed stored value
+PASS when servers still list the delegate after a "successful" revoke, the page does NOT claim it is revoked
+PASS triple-clicking "Sign" sends exactly one transaction (sent 1)
+PASS the network cannot be switched while a revoke is in flight (now "mainnet")
+PASS garbage sequence numbers from a server never reach the wallet ("Could not prepare the transaction: The ledger server returned an invalid account sequence …")
+PASS servers down during confirmation → "Sent — do NOT sign again", and Sign is NOT offered again
+PASS a "Check again" button keeps the verification alive
+PASS once servers recover, the dishonest wallet is still caught (verification was not skipped)
+PASS Watch mode stays on the scanned wallet, not whatever is typed in the box (watching the scanned wallet)
+PASS an address with a hidden character tells the user exactly that
+PASS address box has a length limit (120)
+PASS a 3 MB paste into the checker is refused, not frozen on
+PASS a hostile transaction pasted into the checker cannot inject code (pwned=undefined, elements=0)
+
+ALL 26 PASSED
+=== release-smoke
+xrpl-delegation-checker--2026-10-24.html
+PASS no test hooks in release
+PASS release scans Mainnet
+PASS release cross-check agrees
+PASS Crossmark button works in release
+PASS GemWallet button works in release
+PASS stored protections that are OFF are announced on load
+PASS no page errors
+=== file-open
+PASS release works opened from disk (file://), Mainnet scan
+PASS cross-check works from disk
+PASS no page errors from disk
+=== lab-browser
+PASS lab hidden on Mainnet
+PASS lab visible on Testnet
+PASS step 1: accounts created
+PASS practice wallet connected
+PASS step 2: grant confirmed
+PASS scan shows Critical delegate
+PASS step 3: helper moved 1 XRP
+PASS scan reports delegate activity
+PASS dialog labels the practice signer
+PASS strict check + network lock passed in dialog
+PASS step 4: revoke confirmed: Revoked raudVZN7RfDiz42sRVTPWA7t1XoTnMhz5P no longer has any power over this account. Verified on the ledger. See the transaction.
+PASS step 5: ledger refused the helper
+PASS leaving Testnet forgets the lab
+PASS no page errors
+ALL PASSED
+=== browser (live) — rerun after updating one assertion to the corrected Testnet-operator wording
+setup {
+  owner: 'rGcDduFRvMS3NXHwurCjCif1URsHmw2wuH',
+  thief: 'rHyjYwiiE27wrmrY8JUw1NiHobJYz9Fa6d',
+  helper: 'rMWLfjppZaMGpycaoCv2sf3wTkGasuDe3j',
+  late: 'rwwZjnmU6cZAevToRRsG2WGujYCvugzeXi'
+}
+PASS page script ran under its strict CSP
+PASS safest settings are ON by default, nothing stored by default
+PASS nothing written to browser storage on first visit
+PASS rejects a bad address
+PASS address fingerprint shown for pasted address
+PASS finds 2 delegates
+PASS shows the delegated payment the thief already sent
+PASS Payment delegate ranked Critical first
+PASS PaymentBurn warning shown
+PASS cross-check honestly says the tool uses one Testnet operator
+PASS revoke without a wallet asks to connect
+PASS NETWORK LOCK blocks signing when wallet is on the wrong network
+PASS refuses to revoke from a wallet that does not own the account
+PASS confirm dialog shows the exact revoke
+PASS fee obeys the user's fee limit (10 ≤ 100 drops)
+PASS strict check passed message shown
+PASS honest revoke confirmed AND verified on the ledger
+PASS re-scan: thief gone, helper remains
+PASS LEDGER VERIFY catches a wallet that signed something else
+PASS change detection fires when a new delegate appears
+PASS delegate side shows power it received
+PASS mainnet clean account reads clear
+PASS MAINNET CROSS-CHECK: two independent operators (InFTF and Ripple) agree
+PASS privacy blur turns on
+PASS settings stored only after user turns "Remember" on
+PASS remembered settings survive a reload
+PASS turning "Remember" off erases stored settings
+PASS "Forget everything now" wipes storage, wallet and settings
+PASS signed grant blob flagged Critical
+PASS batch blob hiding a delegation is caught
+PASS SetRegularKey takeover flagged
+   (0 rate-limited server replies were retried automatically)
+PASS no page errors
+PASS CLICKJACKING GUARD: refuses to run inside a frame
+PASS mobile: no horizontal scroll (results)
+PASS mobile: no horizontal scroll (security tab)
+
+ALL PASSED

@@ -1,0 +1,781 @@
+{
+ "ledger": 107769897,
+ "calls": 9812,
+ "workers_completed": 12,
+ "errors": [],
+ "objects": [
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "r4XT1iUVu5FAbnFECSMmMGnVPExkQxHUgM",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "F97DBA0C935E0BAE572D22BB53982C3D32417314243510A69545313316DD0FB0",
+   "PreviousTxnLgrSeq": 107677537,
+   "index": "D5E84B05DF861433471B26598271DE5663CE1DEEF3F30865E125FEEA0BD7D564"
+  },
+  {
+   "Account": "rKYe9qGQvPGqTs4ywH7AogEEXtBNwsCPTT",
+   "Authorize": "rp13uhTVCkB8SBbCBxngVD8VzH8xmY1YJ1",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "0",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "OfferCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "OfferCancel"
+     }
+    }
+   ],
+   "PreviousTxnID": "584A73C349D3905F5878706B95A58A25454C7E364EE313CB2468F2494C71C2C0",
+   "PreviousTxnLgrSeq": 107739666,
+   "index": "965C937BD73678EB136567E77C76F641107F40CADE0122F773001666E53CE58B"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rD65hs1NbGPWRo5wML1eufhrSu1Ku6zGnQ",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "6D379682CC29CC03F33927973CE01DA0580ABD57CC98352AD108BC7075A2B9D4",
+   "PreviousTxnLgrSeq": 107669437,
+   "index": "ABD641D14EC4C7FBABD857F60EABC96AABAC86B557C4EFC138F5CB9F4AC96B64"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rM2U5dwVhX7qTv5mDXqqWU6WbEVD88SNJK",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "37668D8A4422A5A480ADC1B8A09F3FA78621C97BB2DA098971033E7B8A027075",
+   "PreviousTxnLgrSeq": 107677542,
+   "index": "D691117998C8C4B7C01AA62767F63E152888B7EE350A45F17F3A86C6F6268459"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rHhLrP1fdfSJGQDM24EC2r62CjTgNssu6G",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "C043FDE5307DEDD968F9EC17169922E4B738980282711FA4B34A9C4878A6A5C1",
+   "PreviousTxnLgrSeq": 107677536,
+   "index": "6CB77393A22899E56E59AEE0E2EE9D28426481A3927D0D0BBD3A33BC1AA64208"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rNy5imznPWm4AK3h5mFwWrNb1eCnLEVJu3",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "4BFEBA1973FC5F605C41510D5064078D2A4548FADAEBB84DA5D35F4AFCE3F1A7",
+   "PreviousTxnLgrSeq": 107669655,
+   "index": "2D06958B334576DE0339F4D7607863EC14153F5A0BB53F66868951A3CF693E95"
+  },
+  {
+   "Account": "rLc9Z3krJ1Y5boBbqpMoSXKEBviaioDwH9",
+   "Authorize": "rpTUXVoZ9EmV65WdrTPyVYvu12rgMLrGb3",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "0",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    }
+   ],
+   "PreviousTxnID": "0721926BE4C30A745B5D7AFEF535C970C1AECD89A1C9BAFB6BF233E9ECC89F31",
+   "PreviousTxnLgrSeq": 107669586,
+   "index": "44F791264B413877F9B9D69D42D5C7F952118073B8C41430568F5778CEF17648"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rPCYZrrE9ny99eJUJHn23AV7jeLsgQ5D7b",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "6B5D5D3FAAB85D35461E56251C7A6F190C1535D13438F45E82A229FF7AE48049",
+   "PreviousTxnLgrSeq": 107669653,
+   "index": "1A7F3D2F7A891F92AE29B75183E5D6D49E6AFDD1AAC1CA4BA5D439EA5EA270DC"
+  },
+  {
+   "Account": "rHJc1zZFmBzaCPUCYWcvZWPDp9vFrz5AbM",
+   "Authorize": "rKGTjkT7oKisk4j46pxaRZCthyXmpV1sk7",
+   "DestinationNode": "6e",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "6d",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    }
+   ],
+   "PreviousTxnID": "126016D83555F150D73549BB3C9D88A8DD88160B6F7047C05C8945DFBB4A3A60",
+   "PreviousTxnLgrSeq": 107601575,
+   "index": "9A75400FDC13CD70A6384F419C2D5C7EF52D5C36744E65EB98AB8286A2726BE3"
+  },
+  {
+   "Account": "rEdGFQHY5VhadmVSHhxqWHNFVvfUw9XpMU",
+   "Authorize": "rKWd79X7DmeWabe9tzoX33Dm2mUn9KFppa",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "0",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    }
+   ],
+   "PreviousTxnID": "065F4F4028D9150CCB34D8DE047949D2C6510D9018D8B78295A4BA35BD306212",
+   "PreviousTxnLgrSeq": 107669588,
+   "index": "3027C6A6FBAD409957C1BCB394096453F68C3B3405A6D575FAC1EF467BC31DF6"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rniUuaUhDPAxtnwdBQ6j3Zi1vzMADgX5wo",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "CF1D8AC65BE3EDD0E41A96336F37AF5806F43A537B39F9FA2EFFA4E5BC564399",
+   "PreviousTxnLgrSeq": 107677543,
+   "index": "051906C44F4F8E3D7008C32AAF1A27295BBF11A8DABF4D943D5EE949F0736005"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rMRDyRu7tyJGyhx4A9jBkSSrqt4zUKUQcE",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "5E67131CB50E87A363F931994897E67D99BAFF139BEEF42BC240E9F92EB2311B",
+   "PreviousTxnLgrSeq": 107677538,
+   "index": "DCEE424EF4AA779DE5B091B278E3C567040E86DF40063F808F890254CF01AADB"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rGnfq1KYXi2Y3DTSZBrPtF8T7kNAfShrvX",
+   "DestinationNode": "1",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "6610E479A8F43C4CFD5DEE93B8CB85AF305E5551FE3C875125887172881A380C",
+   "PreviousTxnLgrSeq": 107669661,
+   "index": "879EC21B7188B21EE75C83EC548E4D57896DF0BE32362917C1DE1D54F051E48D"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rsY8DudEqdb8ZXh5nAxQYjr5kFXerJDJG3",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "65E8647A63812D0437E091767EA0874112283F2C5F39661F3B789B21DC5C39D7",
+   "PreviousTxnLgrSeq": 107677546,
+   "index": "C81CE0B2664FED375DCCD7C15B8F7C3B998BD129AF7BB924800F1C4E89C0A8F8"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "radcELMu3ikQK8NVhLobzjoAMtiPfhxqwS",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "CE7A6246A26186152F713A93E64703581691F57BC0FC6A8BD920AC71A0C9577C",
+   "PreviousTxnLgrSeq": 107669656,
+   "index": "091538183755AC4B2058C5C9C07A8E330C84D9AF97A35F5782AE39702F725B3A"
+  },
+  {
+   "Account": "rENxidjr5VMNvrKMNQAKBitLd9FYy23sSk",
+   "Authorize": "r99N769HS22qXf1t8xSoKwb4YkcNSS52TT",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "0",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    }
+   ],
+   "PreviousTxnID": "5611CE92D89CD8E774865653315DCE3F6ECD6439FC76A0132BBC46A64CE9F97B",
+   "PreviousTxnLgrSeq": 107669585,
+   "index": "DF65D470F55F4EBA9CD984EBDF53473684B1299D132A7AB44BE064F8C80D2AA8"
+  },
+  {
+   "Account": "rHJc1zZFmBzaCPUCYWcvZWPDp9vFrz5AbM",
+   "Authorize": "rsbRoFnntXFCoAfETdyVHZu8FLgmwRiAo1",
+   "DestinationNode": "6a",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "6d",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    }
+   ],
+   "PreviousTxnID": "F10A66FDE946FADE035CB5B37734E6B4F9BF9DCCCA664A568107B19A8056F302",
+   "PreviousTxnLgrSeq": 107601773,
+   "index": "B4FE395D9225681E4E7E2FC3AF8F50D5F4ADF874DFE9C54D8E7AF6E49682591B"
+  },
+  {
+   "Account": "rNbo7tLDXbK5EoQmgcgEFpYZXB1watuAog",
+   "Authorize": "rwMKPadPqT44LqfjTWqm4mrNgxDrSMcF3Z",
+   "DestinationNode": "8",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "e",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    }
+   ],
+   "PreviousTxnID": "F55CBCF24305EDDD561112D5FE853528CE6AA28AAB852642FF11DDB58F366DF7",
+   "PreviousTxnLgrSeq": 107565609,
+   "index": "0B6FCFE7634D3693C39FC58DF9270A1CE7FF7EE4548EC4FF4CABA3C1DDA9BBE8"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rU4z2Ak2aEdtGMRrhS6bFfKwq8XHUGV8ip",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "3A259585704A5AA833D91D4A0F564F6F00E712B3D32F86AF2D27656EE95F1454",
+   "PreviousTxnLgrSeq": 107669658,
+   "index": "B7075FBF6DAAC31D60D5EC3F2EAD3778868ED3C13E0012B659BA578225162833"
+  },
+  {
+   "Account": "rFMPCQoydfE7VFN4fi9P9zgtvupkGS3dW",
+   "Authorize": "rfsafTj5Zxpoj6fySa1vEjS4Q5FhrRmWEu",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "0",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "NFTokenMint"
+     }
+    }
+   ],
+   "PreviousTxnID": "4D7B377C4CDC0F3C1D8AD4DF844BC3AFCA968D3E4EF44C30AD4AE0AAB637B7C4",
+   "PreviousTxnLgrSeq": 107659945,
+   "index": "235282B7638929FA847769AC0D73759A1D2EE38B6DE70F7DD7D7CC2E8D499BFE"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rEBm5Fc3Zaanoz2QJJVJFyuyntX5Dd6CJg",
+   "DestinationNode": "1",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "17CBB5E7C5A045796540FD41EBEF2A4D3A4C92D9333EA95112C91E723A9CD8C4",
+   "PreviousTxnLgrSeq": 107669662,
+   "index": "CE29572F3071367963E2987C254F32A1327BB08A75EA8764C619BBAAB6E6DDD0"
+  },
+  {
+   "Account": "rLUNT2pkkLFJfUirUsMZR2NFSgP7ZFZtNr",
+   "Authorize": "r4HkmiDb4dcQR1FEy55YxKcbVpQy52aqps",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "0",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    }
+   ],
+   "PreviousTxnID": "663388010038890222AB5D7931024651AFF527333A42FE6A78EC24455CE080F0",
+   "PreviousTxnLgrSeq": 107669592,
+   "index": "3A548A3C15902B243E4BC0B6234C5585EF77CF6F3DC7B5F66DE77D66D2424EC2"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "r3Ky2142AzMMZJni4uRKg7DnvuwfLW9rMY",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "69B7B88FCECB0B2FD42634176839F3E0C1FF60D7837D2D08A0AAB062BA14F769",
+   "PreviousTxnLgrSeq": 107669657,
+   "index": "663CC2CB8102032F893219F5D46E474279FF08E96183A98FF4E6B676DC203F85"
+  },
+  {
+   "Account": "rnt8PbBFT7idcLyj9PNgxjZi9Z1RiRX3QL",
+   "Authorize": "rw2X2GFePFiLDdcQw6iELFfUEw1hPqAGcK",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "0",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "OfferCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "OfferCancel"
+     }
+    }
+   ],
+   "PreviousTxnID": "4250B72A5AB63CEB5501CFDDA3B4C9765B85941BB6AECE9720FC6C0D5F524B66",
+   "PreviousTxnLgrSeq": 107558036,
+   "index": "E63226B764F4D7C198DBF8E4DE0F5DA4F9C1AC449C2927F2150C0B731E020851"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rHFym2LVTjVnbEx3ZqkUvVB8gcNaw3uFix",
+   "DestinationNode": "1",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "EA6DF618A0CC32CD0ED531EFB2D758F6F6FCE081AB14445EB2964B49BB9B21FA",
+   "PreviousTxnLgrSeq": 107669660,
+   "index": "FBF2AE4B677DDB1518049213DA4680EA5C92BC33575EDD65EF07831508E89F90"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rQ9Nx4vNt12fcCM3Qsq3VipMG1yTmvu5yt",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "ED12EA3A648763B5FAA244DF7E1EE21868A419A917AE78A6F0091CC07A5718FF",
+   "PreviousTxnLgrSeq": 107677540,
+   "index": "2707A227FCC5D5C2B1568EC5D84EBCF1F0AE53B5F6D7325D9019F8E5B436D3D3"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rLKfVWxgBD2BwEKTDSZyxBPMCmPuGrv6Vp",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "1208CA678B15E91CFFF054E5FF2E31C03BB6F636DEB954CC097C6D48E1F2B2DD",
+   "PreviousTxnLgrSeq": 107677545,
+   "index": "7CA96C116686044FE1A5B7C698E9696106DD103FB397E6612E8D1B1105B8152E"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rJnXSfW8kVJcXfiASkHHZBhbun5JhiLENB",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "633F36E48D1E045D25F793E1A92098C3A5C5ABEC79DDC331A907A0A6DBB0418E",
+   "PreviousTxnLgrSeq": 107677541,
+   "index": "7CDDE40CDBF5D5AC5B018F4AF08E3BFDA35BF17C7C3B8B1A67A83482B1C85BCE"
+  },
+  {
+   "Account": "rEdGFQHY5VhadmVSHhxqWHNFVvfUw9XpMU",
+   "Authorize": "ra5fKHSL4vA75xvXYso8WSQoVgxvgXKGcb",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "0",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    }
+   ],
+   "PreviousTxnID": "3B7DC460D1710E7FA4388EBFBE85227A6D6747D50EA9303BD58FDC1D9C0F7364",
+   "PreviousTxnLgrSeq": 107669590,
+   "index": "940EC0C76E14673B8367BD1594AF089F4CF1AE0D10FB30127841D6B45D86900A"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "r9HtaoB4TJnZFidQ1sA2VaDFwpz1btCLpG",
+   "DestinationNode": "0",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "235AD5AAEC3B77C7C9B79AD0FDCDFDB844667B470858D969B42A40F290EAB1C3",
+   "PreviousTxnLgrSeq": 107677539,
+   "index": "6AA4AEEE4DA5AA27E7D5C1DB7155D1EC8F3931FE5CF62530C4405C8B373C8A99"
+  },
+  {
+   "Account": "rQnxMTwCpP3YE3t3ELCouJq2DRuZ5QCH3b",
+   "Authorize": "rso8RATr45ge785J96ob7jwHZLCnec4kCr",
+   "DestinationNode": "1",
+   "Flags": 0,
+   "LedgerEntryType": "Delegate",
+   "OwnerNode": "4",
+   "Permissions": [
+    {
+     "Permission": {
+      "PermissionValue": "Payment"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TicketCreate"
+     }
+    },
+    {
+     "Permission": {
+      "PermissionValue": "TrustSet"
+     }
+    }
+   ],
+   "PreviousTxnID": "BB0F600BE2ADF45D354BA3F775248535F6167B2A14BCD582074D864FDCFAF894",
+   "PreviousTxnLgrSeq": 107669659,
+   "index": "EA891633CF0145642B3E0869F486B7E7CB203733698753EE57714D527A9684A9"
+  }
+ ]
+}

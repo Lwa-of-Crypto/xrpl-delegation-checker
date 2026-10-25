@@ -1,0 +1,37 @@
+// Live Testnet test of the Practice Lab logic (faucet → grant → helper spends → revoke → helper refused).
+import * as lab from '../src/lab.js';
+import * as core from '../src/core.js';
+import * as xrpl from 'xrpl';
+let fails = 0; const check = (c, m) => { console.log(`${c ? 'PASS' : 'FAIL'} ${m}`); if (!c) fails++; };
+globalThis.WebSocket = undefined;
+const rpc = core.makeRpc('testnet', fetch);
+// signWith must match xrpl.js byte for byte
+const w = xrpl.Wallet.generate();
+const sample = { TransactionType: 'DelegateSet', Account: w.address, Authorize: 'rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe', Permissions: [{ Permission: { PermissionValue: 'Payment' } }], Fee: '12', Sequence: 5, LastLedgerSequence: 100 };
+const ref = w.sign(sample);
+const mine = lab.signWith({ address: w.address, publicKey: w.publicKey, privateKey: w.privateKey }, sample);
+check(mine.tx_blob === ref.tx_blob && mine.hash === ref.hash, 'signWith matches xrpl.js blob and hash');
+let threw = false; try { await lab.createAccounts('mainnet', rpc); } catch { threw = true; } check(threw, 'lab refuses Mainnet');
+const t0 = Date.now();
+const accts = await lab.createAccounts('testnet', rpc, fetch, (m) => console.log('  ', m));
+check(core.isAddress(accts.owner) && core.isAddress(accts.helper) && accts.owner !== accts.helper, `two practice accounts created (${((Date.now()-t0)/1000).toFixed(0)} s)`);
+const g = await lab.grant('testnet', rpc, 1000);
+check(g.validated && g.result === 'tesSUCCESS', `grant validated: ${g.result}`);
+const scan1 = await core.scanAccount(rpc, accts.owner, { history: false });
+check(scan1.delegates?.length === 1 || JSON.stringify(scan1).includes(accts.helper), 'scan sees the delegate');
+const sp = await lab.helperSpends('testnet', rpc, 1000);
+check(sp.validated && sp.result === 'tesSUCCESS', `helper moved 1 XRP out of owner: ${sp.result}`);
+const pw = lab.practiceWallet(() => 'testnet', () => rpc);
+const tx = await core.autofill(rpc, core.buildRevoke(accts.owner, accts.helper), 1000);
+check(core.verifyRevokeTx(tx, accts.owner, accts.helper, 1000).length === 0, 'revoke passes strict check');
+let refused = false; try { await pw.signAndSubmit({ ...tx, Account: accts.helper }); } catch { refused = true; } check(refused, 'practice wallet refuses to sign for another account');
+const pwMain = lab.practiceWallet(() => 'mainnet', () => rpc); refused = false; try { await pwMain.signAndSubmit(tx); } catch { refused = true; } check(refused, 'practice wallet refuses when page is on Mainnet');
+const h = await pw.signAndSubmit(tx);
+const v = await core.waitForValidation(rpc, h);
+check(v.validated && v.result === 'tesSUCCESS', `revoke validated: ${v.result}`);
+const ver = await core.verifyOnLedger(rpc, h, accts.owner, accts.helper, 1000);
+console.log('   verifyOnLedger:', JSON.stringify(ver).slice(0, 200));
+const sp2 = await lab.helperSpends('testnet', rpc, 1000);
+check(sp2.result === 'terNO_DELEGATE_PERMISSION' || sp2.prelim === 'terNO_DELEGATE_PERMISSION', `helper refused after revoke: ${sp2.result || sp2.prelim}`);
+lab.wipe(); check(!lab.labState().owner, 'wipe forgets the practice keys');
+console.log(fails ? `${fails} FAILED` : 'ALL PASSED'); process.exit(fails ? 1 : 0);

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src '__SCRIPT_HASH__'; style-src 'unsafe-inline'; img-src data:; connect-src https://xrplcluster.com https://xrpl.ws https://testnet.xrpl-labs.com https://faucet.altnet.rippletest.net wss://s1.ripple.com wss://s2.ripple.com wss://honeycluster.io; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>XRPL Delegation Checker</title>
+<meta name="description" content="Free, open-source tool: see which accounts can act as your XRP Ledger wallet, revoke them in one signature, and check a transaction before you sign it.">
+<meta name="author" content="Stanley Gebara · CryptoLwa">
+<meta name="theme-color" content="#0A0E17">
+<style>
+:root{
+  --bg:#0A0E17; --panel:#111827; --panel2:#0E1420; --line:#1F2A3C; --text:#E6EAF2; --muted:#93A0B5;
+  --gold:#D9B45B; --gold2:#F0D58C; --ok:#3FBF8A; --warn:#E3A33B; --danger:#F05D5E; --crit:#FF3B5C; --link:#9CC3FF;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#F6F4EE; --panel:#FFFFFF; --panel2:#FBFAF6; --line:#E3DED1; --text:#141821; --muted:#5D6677;
+    --gold:#8E6A12; --gold2:#6E510A; --ok:#1E8A5B; --warn:#A8670B; --danger:#C53A3B; --crit:#B3122E; --link:#1F5FBF;
+  }
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--link)}
+code,pre{font-family:var(--mono);font-size:.88em;word-break:break-all}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 64px}
+header.top{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:20px}
+.brand{display:flex;gap:14px;align-items:center}
+.mark{width:46px;height:46px;flex:none}
+h1{font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.15;margin:0;letter-spacing:-.01em}
+.tag{margin:.35rem 0 0;color:var(--muted)}
+.by{font-size:.8rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.by b{color:var(--gold)}
+.net{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--panel2)}
+.net button{all:unset;cursor:pointer;padding:6px 14px;font-size:.85rem;color:var(--muted)}
+.net button[aria-pressed="true"]{background:var(--gold);color:#1a1405;font-weight:600}
+body[data-net="testnet"] .wrap{box-shadow:inset 0 4px 0 var(--warn)}
+.testnet-flag{display:none;margin-top:10px;color:var(--warn);font-size:.85rem}
+body[data-net="testnet"] .testnet-flag{display:block}
+.lab{display:none;border:1px dashed var(--warn);border-radius:12px;padding:14px 16px;margin:14px 0}
+body[data-net="testnet"] .lab{display:block}
+.lab h3{margin:0 0 6px}
+.lab-steps{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.lab-note{align-self:center;font-size:.9em}
+#lab-log p{margin:6px 0}
+#lab-log .ok-t{color:var(--ok)}
+#lab-log .warn-t{color:var(--warn)}
+#lab-log .err{color:var(--danger)}
+.tabs{display:flex;gap:4px;margin:26px 0 0;border-bottom:1px solid var(--line)}
+.tabs [role=tab]{all:unset;cursor:pointer;padding:10px 16px;color:var(--muted);border-bottom:2px solid transparent;font-weight:500}
+.tabs [role=tab][aria-selected="true"]{color:var(--text);border-color:var(--gold)}
+.tabs [role=tab]:focus-visible,.btn:focus-visible,.net button:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+.panel{background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;padding:22px}
+.wallets{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.wallets .label{color:var(--muted);font-size:.9rem;margin-right:4px}
+.wallet-status{font-size:.88rem;color:var(--muted);flex-basis:100%}
+.wallet-status.ok{color:var(--ok)} .wallet-status.err{color:var(--danger)}
+form.row{display:flex;gap:8px;flex-wrap:wrap}
+input[type=text],textarea{flex:1 1 320px;min-width:0;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:15px var(--mono)}
+textarea{width:100%;min-height:150px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:0;border-color:transparent}
+.btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 18px;border-radius:10px;background:var(--gold);color:#1a1405;font-weight:650;white-space:nowrap}
+.btn:hover{background:var(--gold2)}
+.btn[disabled]{opacity:.5;cursor:wait}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);font-weight:500}
+.btn.ghost:hover{border-color:var(--gold)}
+.btn.revoke{background:var(--danger);color:#fff}
+.btn.revoke:hover{background:var(--crit)}
+.hint{color:var(--muted);font-size:.86rem;margin:10px 0 0}
+#results,#check-out{margin-top:22px}
+.banner{border-radius:12px;padding:14px 16px;border:1px solid var(--line);border-left-width:5px;background:var(--panel2);margin-bottom:14px}
+.banner p{margin:.25rem 0 0;color:var(--muted)}
+.banner.ok{border-left-color:var(--ok)} .banner.warn{border-left-color:var(--warn)}
+.banner.danger{border-left-color:var(--crit)} .banner.err{border-left-color:var(--danger)} .banner.neutral{border-left-color:var(--muted)}
+.block h3{font-size:1.02rem;margin:24px 0 4px}
+.sub{color:var(--muted);margin:0 0 10px;font-size:.9rem}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--panel2);padding:14px 16px;margin:10px 0}
+.card.lvl-critical{border-color:color-mix(in srgb,var(--crit) 55%,var(--line))}
+.card header{display:flex;gap:12px;align-items:flex-start}
+.who{display:flex;flex-direction:column;gap:2px;min-width:0}
+.who .label{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.perms{list-style:none;padding:0;margin:12px 0}
+.perms li{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:baseline;padding:6px 0;border-top:1px dashed var(--line)}
+.perms .note{grid-column:2;color:var(--warn);font-size:.85rem}
+.card footer{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.03em;border:1px solid currentColor;white-space:nowrap}
+.pill.small{font-size:.72rem;padding:1px 8px;font-weight:600}
+.lvl-critical.pill{color:var(--crit)} .lvl-high.pill{color:var(--danger)} .lvl-medium.pill{color:var(--warn)} .lvl-low.pill{color:var(--ok)}
+.muted{color:var(--muted);font-size:.86rem}
+.activity,.received{list-style:none;padding:0;margin:0}
+.activity li,.received li{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;padding:8px 12px;border:1px solid var(--line);border-radius:10px;margin:6px 0;background:var(--panel2)}
+.activity li.lvl-critical{border-left:4px solid var(--crit)}
+.tx-type{font-weight:700}
+.loading{display:flex;gap:10px;align-items:center;color:var(--muted)}
+.spin{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--gold);animation:s 1s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.spin{animation:none}}
+.explain{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--panel2);margin:8px 0}
+.explain h4{margin:0 0 6px}
+.explain ul{margin:0;padding-left:0;list-style:none}
+.explain li{padding:4px 0}
+.inner{margin-left:14px;border-left:2px solid var(--line);padding-left:12px}
+.inner-n{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:10px}
+dialog{border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--text);max-width:min(620px,calc(100vw - 32px));padding:20px}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.json{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px;overflow:auto;max-height:240px;white-space:pre-wrap}
+.dlg-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
+.err{color:var(--danger)}
+.about{margin-top:40px;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.about div{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--panel)}
+.about h3{margin:0 0 6px;font-size:.95rem;color:var(--gold)}
+.about p{margin:0;color:var(--muted);font-size:.9rem}
+footer.bottom{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+footer.bottom p{margin:.3rem 0}
+
+.linkish{all:unset;cursor:pointer;color:var(--link);text-decoration:underline;margin-left:8px}
+.fp{margin:10px 0 0;font:15px var(--mono);color:var(--muted);word-break:break-all}
+.fp .fp-part{color:var(--gold2);font-size:1.25em;letter-spacing:.06em;background:color-mix(in srgb,var(--gold) 14%,transparent);padding:0 4px;border-radius:4px}
+.fp .fp-mid{opacity:.7}
+body.masked .sensitive{filter:blur(6px);transition:filter .15s}
+body.masked .sensitive:hover,body.masked .sensitive:focus{filter:none}
+.cc{margin:0 0 12px}.cc.ok{color:var(--ok)}
+.watch{color:var(--ok)}
+.checks{list-style:none;padding:0;margin:10px 0;font-size:.9rem;color:var(--ok)}
+.checks .warn-t{color:var(--warn)}
+.set-group{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin:22px 0 6px}
+.set-group:first-child{margin-top:4px}
+.setting{display:flex;gap:16px;justify-content:space-between;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
+.setting p{margin:.2rem 0 .4rem;color:var(--muted);font-size:.9rem}
+.setting select,#settings select{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 8px;font:inherit;font-size:.88rem}
+.switch{position:relative;flex:none;width:48px;height:28px;margin-top:2px}
+.switch input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+.switch span{position:absolute;inset:0;border-radius:999px;background:var(--line);transition:background .15s}
+.switch span::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--text);transition:transform .15s}
+.switch input:checked + span{background:var(--ok)}
+.switch input:checked + span::after{transform:translateX(20px);background:#fff}
+.switch input:focus-visible + span{outline:2px solid var(--gold2);outline-offset:2px}
+.set-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.saved{color:var(--ok);font-weight:600}
+details.copy{margin-top:14px;border:1px dashed var(--line);border-radius:10px;padding:10px 12px}
+details.copy summary{cursor:pointer;color:var(--link)}
+</style>
+</head>
+<body data-net="mainnet">
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="var(--gold)" stroke-width="2"/><path d="M24 9v30M9 24h30" stroke="var(--gold)" stroke-width="2"/><circle cx="24" cy="24" r="8" fill="none" stroke="var(--gold)" stroke-width="2"/><path d="M14 14l20 20" stroke="var(--danger)" stroke-width="3" stroke-linecap="round"/></svg>
+        <div>
+          <div class="by">A free community tool by <b>CryptoLwa</b></div>
+          <h1>XRPL Delegation Checker</h1>
+        </div>
+      </div>
+      <p class="tag">See which accounts can act as your XRP Ledger wallet, and take that power back with one signature.</p>
+    </div>
+    <div>
+      <div class="net" role="group" aria-label="Network">
+        <button type="button" data-net="mainnet" aria-pressed="true">Mainnet</button>
+        <button type="button" data-net="testnet" aria-pressed="false">Testnet</button>
+      </div>
+      <div class="testnet-flag">Testnet: practice network, coins have no value.</div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="tab-scan" id="t1">Check a wallet</button>
+    <button role="tab" aria-selected="false" aria-controls="tab-check" id="t2">Check before you sign</button>
+    <button role="tab" aria-selected="false" aria-controls="tab-security" id="t3">Security</button>
+  </nav>
+
+  <section class="panel" role="tabpanel" id="tab-scan" aria-labelledby="t1">
+    <div class="wallets">
+      <span class="label">Optional — connect to revoke:</span>
+      <button class="btn ghost" type="button" data-wallet="crossmark">Crossmark</button>
+      <button class="btn ghost" type="button" data-wallet="gem">GemWallet</button>
+      <div id="wallet-status" class="wallet-status">Scanning works without connecting. Connecting never shares your secret key.</div>
+    </div>
+    <form id="scan-form" class="row" autocomplete="off">
+      <label for="addr" class="sr" hidden>XRPL address</label>
+      <input id="addr" type="text" placeholder="r… paste any XRPL address" spellcheck="false" autocomplete="off" autocapitalize="off" maxlength="120" aria-label="XRPL address">
+      <button id="scan-btn" class="btn" type="submit">Scan</button>
+    </form>
+    <p id="fp" class="fp" hidden></p>
+    <p class="hint">Reads public ledger data only. You can check any address — yours, a friend's, or a project's.</p>
+    <section id="lab" class="lab" aria-labelledby="lab-h">
+      <h3 id="lab-h">Practice Lab <span class="pill small lvl-medium">Testnet only</span></h3>
+      <p class="muted">Practise the whole cycle with two throwaway Testnet accounts: give one power over the other, see it here, revoke it, and prove it is gone. The practice keys come from the official Testnet faucet, live only in this tab, and are forgotten when you leave Testnet. They can never touch Mainnet or your real wallet.</p>
+      <div class="lab-steps">
+        <button type="button" class="btn ghost" id="lab-create">1 · Create two practice accounts</button>
+        <button type="button" class="btn ghost" id="lab-grant" disabled>2 · Give the helper power</button>
+        <button type="button" class="btn ghost" id="lab-spend" disabled>3 · Let the helper take 1 XRP</button>
+        <span class="lab-note">4 · Press the red <b>Revoke</b> button on the card below</span>
+        <button type="button" class="btn ghost" id="lab-prove" disabled>5 · Prove it: helper tries again</button>
+      </div>
+      <div id="lab-log" aria-live="polite"></div>
+    </section>
+    <div id="results" aria-live="polite"></div>
+  </section>
+
+  <section class="panel" role="tabpanel" id="tab-check" aria-labelledby="t2" hidden>
+    <form id="check-form">
+      <label for="sign-input" class="muted">Paste the transaction a site or app wants you to sign — JSON, or the long hex "blob".</label>
+      <textarea id="sign-input" spellcheck="false" placeholder='{"TransactionType":"DelegateSet", ...}  or  1200402200000000...'></textarea>
+      <p><button class="btn" type="submit">Explain it in plain English</button></p>
+    </form>
+    <p class="hint">Nothing is sent anywhere. The check runs inside this page.</p>
+    <div id="check-out" aria-live="polite"></div>
+  </section>
+
+  <section class="panel" role="tabpanel" id="tab-security" aria-labelledby="t3" hidden>
+    <p class="sub">Every switch below is yours to turn on or off. The safest settings are on by default. <span id="set-status" class="saved" aria-live="polite"></span></p>
+    <div id="settings"></div>
+  </section>
+
+  <div class="about">
+    <div><h3>Why this exists</h3><p>Since 8 October 2026 an XRPL account can give another account power to send transactions as it. That is useful for businesses — and dangerous if a scam site tricks you into granting it.</p></div>
+    <div><h3>What it never does</h3><p>It never asks for your secret key or recovery words, never holds funds, and has no server. Your wallet signs; this page only reads the public ledger. (The Testnet Practice Lab signs only with throwaway Testnet keys it gets from the faucet.)</p></div>
+    <div><h3>Open source</h3><p>One file, no tracking, no ads. Read the code, host your own copy, improve it.</p></div>
+  </div>
+
+  <footer class="bottom">
+    <p>Created by Stanley Gebara · <a href="https://cryptolwa.io" rel="noopener noreferrer">cryptolwa.io</a> · Released under the MIT License · Version __VERSION__</p>
+    <p>Independent community tool. Not affiliated with Ripple, the XRPL Foundation, Crossmark or GemWallet. Educational and informational only — not financial advice. Always confirm what you sign inside your own wallet.</p>
+    <p>Ledger data from public servers: xrplcluster.com / xrpl.ws (InFTF), with s1/s2.ripple.com (Ripple) and honeycluster.io as independent second opinions on Mainnet; testnet.xrpl-labs.com on Testnet.</p>
+  </footer>
+</div>
+
+<dialog id="revoke-dialog" aria-labelledby="rv-title">
+  <h2 id="rv-title" style="margin-top:0">Revoke delegate</h2>
+  <div id="revoke-body"></div>
+  <div class="dlg-actions">
+    <button class="btn ghost" type="button" id="revoke-close">Close</button>
+    <button class="btn revoke" type="button" id="revoke-go">Sign with my wallet</button>
+  </div>
+</dialog>
+
+<script>__BUNDLE__</script>
+</body>
+</html>
