@@ -53,6 +53,13 @@ Final run, on the exact release code: on 19 October 2026 two full sweeps, three 
 
 Slowest real-wallet scan: 15 s. Results: `backtest-result--2026-10-19.json`.
 
+## Field report fix (1.0.5, 25 October 2026)
+
+- **Bug reported by a user:** after clicking **Scan**, nothing happened. We reproduced it: when a ledger server accepts the connection but never answers, 1.0.4 stayed on "Reading XRPL Mainnet…" with the Scan button greyed out, forever (still the same after 60 s in our test). The 40-second limit on each question was only checked *between* attempts, and a request over HTTPS had no time limit of its own.
+- **Fix:** every attempt now has its own limit of 15 seconds, covering both the connection and reading the answer, and the stuck connection is actually cancelled. The tool then moves on to the next server. If every server stalls, the user gets "Could not complete the scan… No ledger server could be reached right now" within 40 seconds and can scan again.
+- **New test:** `test/hang.mjs` (a server that never answers, a server that never finishes its answer, every server stalled, and the cancel signal). It hangs forever on the 1.0.4 code and passes on 1.0.5. A real-browser check with every HTTPS and WebSocket server stalled shows the error after 40 s with the Scan button usable again.
+- The user manual (edition 3, written for 1.0.4) still applies unchanged.
+
 ## Real-wallet testing (24 October 2026)
 
 - **Bug found and fixed:** in the 1.0.3 release file the Crossmark button failed on every click ("Cannot read properties of undefined (reading 'isInstalled')"). The release tree's `"type": "module"` made esbuild import the Crossmark UMD bundle's wrapper instead of the SDK; the tests had used a build without that setting. 1.0.4 resolves the SDK object robustly, all tests now run from the release tree, and `release-smoke.mjs` checks both wallet buttons in the exact release file.
@@ -135,21 +142,21 @@ Only public servers listed on xrpl.org's "Public Servers" page:
 
 The ready-built file, its security headers, checksum and the user manual are in `release/`.
 
-1. Upload `release/xrpl-delegation-checker--2026-10-24.html` to any static host, for example as `/tools/xrpl-delegation-checker/index.html`.
-2. Add the lines from `_headers--2026-10-24.txt` to your host's headers config, and edit the path line (it starts with `/tools/`) to match.
-3. Check your copy matches: `sha256sum` it and compare with `SHA256SUMS--2026-10-24.txt`.
+1. Upload `release/xrpl-delegation-checker--2026-10-25.html` to any static host, for example as `/tools/xrpl-delegation-checker/index.html`.
+2. Add the lines from `_headers--2026-10-25.txt` to your host's headers config, and edit the path line (it starts with `/tools/`) to match.
+3. Check your copy matches: `sha256sum` it and compare with `SHA256SUMS--2026-10-25.txt`.
 
 ## Rebuild it yourself (reproducible)
 
 ```
 npm ci              # exact versions from package-lock.json
-node build.mjs      # writes dist/xrpl-delegation-checker--2026-10-24.html
-sha256sum dist/*.html   # matches SHA256SUMS--2026-10-24.txt
+node build.mjs      # writes dist/xrpl-delegation-checker--2026-10-25.html
+sha256sum dist/*.html   # matches SHA256SUMS--2026-10-25.txt
 ```
 
-Tests (always from this folder, so tests and release use the same settings): `node build.mjs --test`, then bundle and run `test/unit.mjs`, `test/attack-core.mjs` and `test/lab-live.mjs` with esbuild, and run `test/attack-browser.mjs`, `test/browser.mjs` (live Testnet + Mainnet), `test/lab-browser.mjs <release file>`, `test/release-smoke.mjs` and `test/file-open.mjs` with Playwright Chromium. `test/wallet-e2e/` drives the real wallet extensions (see its README).
+Tests (always from this folder, so tests and release use the same settings): `node build.mjs --test`, then bundle and run `test/unit.mjs`, `test/attack-core.mjs`, `test/hang.mjs` and `test/lab-live.mjs` with esbuild, and run `test/attack-browser.mjs`, `test/browser.mjs` (live Testnet + Mainnet), `test/lab-browser.mjs <release file>`, `test/release-smoke.mjs` and `test/file-open.mjs` with Playwright Chromium. `test/wallet-e2e/` drives the real wallet extensions (see its README).
 
-Results for 1.0.4: unit all passed · attack-core 35/35 · attack-browser 26/26 · browser (live) 35/35 · lab-live all passed · lab-browser all passed · release-smoke and file-open all passed.
+Results for 1.0.5: unit all passed · attack-core 35/35 · hang all passed · attack-browser 26/26 · browser (live) all passed · testnet (live) all passed · lab-live all passed · lab-browser all passed · release-smoke and file-open all passed (live Mainnet).
 
 ## Disclaimer
 

@@ -3,8 +3,8 @@ import { build } from 'esbuild';
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { createHash } from 'crypto';
 
-const VERSION = '1.0.4';
-const DATE = '2026-10-24';
+const VERSION = '1.0.5';
+const DATE = '2026-10-25';
 
 const TEST = process.argv.includes('--test');
 const res = await build({
