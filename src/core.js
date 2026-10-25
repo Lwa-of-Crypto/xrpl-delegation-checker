@@ -142,24 +142,40 @@ function makeClient(endpointList, fetchImpl = globalThis.fetch && globalThis.fet
         await sleep(wait);
       }
       let res;
+      // Every single attempt has its own time limit, for both transports. (User report, 25 Oct 2026: a server
+      // that accepted the connection but never answered left the scan on "Reading XRPL Mainnet…" forever,
+      // because the deadline above is only checked between attempts.) The limit also covers reading the body.
+      const attemptMs = Math.min(15000, Math.max(1000, left()));
+      let attemptTimer = null;
       try {
         if (url.startsWith('wss://')) {
           if (!wsImpl) throw new Error('WebSocket not available');
-          res = await wsRequest(url, method, params, wsImpl, Math.min(15000, Math.max(1000, left())));
+          res = await wsRequest(url, method, params, wsImpl, attemptMs);
         } else {
-          res = await fetchImpl(url, {
+          const ctrl = typeof AbortController === 'function' ? new AbortController() : null;
+          const timedOut = new Promise((_, reject) => {
+            attemptTimer = setTimeout(() => { const e = new Error(`${url} timed out`); reject(e); try { ctrl && ctrl.abort(e); } catch { /* ignore */ } }, attemptMs);
+          });
+          timedOut.catch(() => {}); // handled where it is awaited
+          const raw = await Promise.race([fetchImpl(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ method, params: [{ api_version: 2, ...params }] }),
-          });
+            ...(ctrl ? { signal: ctrl.signal } : {}),
+          }), timedOut]);
+          // Read the body inside the same time limit, then hand the rest of the code a ready answer.
+          const body = raw && raw.ok && ![418, 429, 503].includes(raw.status) ? await Promise.race([raw.json(), timedOut]) : undefined;
+          res = { ok: raw.ok, status: raw.status, headers: raw.headers, json: async () => { if (body === undefined) return raw.json(); return body; } };
         }
       } catch (netErr) {
+        clearTimeout(attemptTimer);
         // A busy server's rate-limit reply often lacks CORS headers, which the browser reports as
         // "Failed to fetch". Treat it like a busy signal: rest this server, try the other.
         coolDown(url, 3000);
         lastErr = netErr;
         continue;
       }
+      clearTimeout(attemptTimer);
       readQuota(url, res);
       if ([418, 429, 503].includes(res.status)) { coolDown(url, 3000); lastErr = new Error(`${url} was busy`); continue; }
       try {
