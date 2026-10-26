@@ -9,8 +9,21 @@ import * as crossmarkModule from '@crossmarkio/sdk';
 // or not), the SDK object is the module itself, its .default, or its .default.default. Pick whichever one
 // actually has the SDK on it, so the build setting can never silently break the Crossmark button again
 // (real-wallet test finding, v1.0.3: the release build got the wrapper object and every click failed).
-const crossmark = [crossmarkModule, crossmarkModule.default, crossmarkModule.default && crossmarkModule.default.default]
-  .find((m) => m && m.sync && m.methods) || null;
+//
+// On phones and tablets the SDK object throws "Crossmark only available from desktop" the moment ANY of its
+// properties is read. Reading it unguarded here stopped the whole page script on Android and iOS, so Scan did
+// nothing at all (user report, 25 Oct 2026). Every read is guarded; the page works without Crossmark.
+let crossmark = null;
+let crossmarkUnavailable = '';
+for (const pick of [(m) => m, (m) => m.default, (m) => m.default && m.default.default]) {
+  try {
+    const m = pick(crossmarkModule);
+    if (m && m.sync && m.methods) { crossmark = m; break; }
+  } catch (e) {
+    crossmarkUnavailable = String((e && e.message) || e || 'unavailable');
+  }
+}
+const CROSSMARK_DESKTOP_ONLY = 'Crossmark is a desktop browser extension, so it cannot connect on a phone or tablet. Scanning works here. To revoke, use Crossmark or GemWallet on a desktop browser, or copy the transaction and sign it elsewhere.';
 
 // ================================================================ ALWAYS-ON: clickjacking guard
 // This page must never run inside someone else's frame (a hidden frame could trick clicks).
@@ -206,7 +219,7 @@ const WALLETS = {
   crossmark: {
     name: 'Crossmark',
     async connect() {
-      if (!crossmark) throw new Error('The Crossmark connector failed to load. Please report this.');
+      if (!crossmark) throw new Error(crossmarkUnavailable ? CROSSMARK_DESKTOP_ONLY : 'The Crossmark connector failed to load. Please report this.');
       if (!crossmark.sync.isInstalled()) throw new Error('Crossmark is not installed in this browser.');
       const r = await crossmark.methods.signInAndWait();
       const address = r && r.response && r.response.data && r.response.data.address;
@@ -215,12 +228,14 @@ const WALLETS = {
     },
     async network() {
       if (!crossmark) return null;
-      const n = crossmark.sync.getNetwork();
+      let n;
+      try { n = crossmark.sync.getNetwork(); } catch { return null; }
       if (!n) return null;
       if (n.protocol && String(n.protocol).toLowerCase() !== 'xrpl') return `other:${n.protocol}`;
       return String(n.type || '').toLowerCase() || null;
     },
     async signAndSubmit(tx) {
+      if (!crossmark) throw new Error(CROSSMARK_DESKTOP_ONLY);
       const r = await crossmark.methods.signAndSubmitAndWait(tx);
       const hash = findHash(r);
       if (!hash) {
