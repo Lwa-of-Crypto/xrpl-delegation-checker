@@ -1,6 +1,6 @@
 {
   "name": "xrpl-delegation-checker",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "See which accounts can act as your XRP Ledger wallet, revoke them, and check transactions before you sign.",
   "author": "Stanley Gebara (cryptolwa.io)",
   "license": "MIT",

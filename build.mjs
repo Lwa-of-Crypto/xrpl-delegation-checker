@@ -3,7 +3,7 @@ import { build } from 'esbuild';
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { createHash } from 'crypto';
 
-const VERSION = '1.0.5';
+const VERSION = '1.0.6';
 const DATE = '2026-10-25';
 
 const TEST = process.argv.includes('--test');
@@ -20,7 +20,7 @@ const html = readFileSync('src/template.html', 'utf8')
   .replace('__VERSION__', `${VERSION} · ${DATE}`)
   .replace('__BUNDLE__', () => js);
 mkdirSync('dist', { recursive: true });
-const out = TEST ? 'test-build/index.html' : `dist/xrpl-delegation-checker--${DATE}.html`;
+const out = TEST ? 'test-build/index.html' : `dist/xrpl-delegation-checker-v${VERSION}--${DATE}.html`;
 mkdirSync('test-build', { recursive: true });
 writeFileSync(out, html);
 console.log(out, (html.length / 1024).toFixed(0) + ' KB', 'sha256-' + hash);
@@ -45,8 +45,8 @@ if (!TEST) {
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), clipboard-read=()
 `;
   mkdirSync('release', { recursive: true });
-  writeFileSync(`release/_headers--${DATE}.txt`, headers);
+  writeFileSync(`release/_headers-v${VERSION}--${DATE}.txt`, headers);
   const fileHash = createHash('sha256').update(html).digest('hex');
-  writeFileSync(`release/SHA256SUMS--${DATE}.txt`, `${fileHash}  xrpl-delegation-checker--${DATE}.html\n`);
+  writeFileSync(`release/SHA256SUMS-v${VERSION}--${DATE}.txt`, `${fileHash}  xrpl-delegation-checker-v${VERSION}--${DATE}.html\n`);
   console.log('file sha256', fileHash);
 }
